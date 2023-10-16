@@ -1,0 +1,5 @@
+select %disk%
+clean
+create partition primary
+format FS=NTFS LABEL="%disklabel%
+exit
