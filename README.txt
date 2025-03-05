@@ -8,13 +8,13 @@
                                                                                                              __/ |
                                                                                                             |___/
                
-                    Created for the WGCSD to help aid in cleaning and formatting old HDD's   
+                             Created to help aid in cleaning and formatting old HDD's
 
                                               Script Developed By:
 
-                                       Cameron Reina        Karl Weaver
-                                         STU TECH           NET ADMIN
-
+                                                 Cameron Reina       
+                                                   STU TECH           
+ 
 --------------------------------------------------------------------------------------------------------------------
 
 Steps:
