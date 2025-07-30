@@ -8,6 +8,3 @@ del partition override
 sel partition 4
 del partition override
 clean
-create partition primary
-format FS=%format% LABEL="%disklabel% quick
-exit

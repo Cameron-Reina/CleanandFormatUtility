@@ -1,5 +1,13 @@
 select %disk%
+sel partition 1
+del partition override
+sel partition 2
+del partition override
+sel partition 3
+del partition override
+sel partition 4
+del partition override
 clean
 create partition primary
-format FS=NTFS LABEL="%disklabel%
+format FS=%format% LABEL="%disklabel%
 exit

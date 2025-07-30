@@ -11,14 +11,19 @@ set "ParentDir=%~dp0"
 @diskpart /s %ParentDir%scripts\listdisk.txt
 @echo:
 @set /p "disk=Select the disk you wish to clean and format (ex: disk 2): "
-@echo
+@echo:
 @echo You have selected: %disk%
+@echo:
+@set /p "format=Select the format type (ex: NTFS, FAT32, exFAT): "
+@echo:
+@echo You have selected: %format%
 @echo:
 @set /p "disklabel=Enter a name for the format label: "
 @echo:
 @echo You have selected: %disklabel%
 @echo:
-@choice /c:qf /m "How extensive do you want to format? Quick or Full?"
+@choice /c:qfc /m "How extensive do you want to format? Quick, Full or Clean?"
+if %errorlevel% EQU 3 goto :partclean
 if %errorlevel% EQU 2 goto :full
 if %errorlevel% EQU 1 goto :quick
 
@@ -26,6 +31,8 @@ if %errorlevel% EQU 1 goto :quick
 @diskpart /s %ParentDir%scripts\cleanandformatfull.txt
 :quick
 @diskpart /s %ParentDir%scripts\cleanandformatquick.txt
+:partclean
+@diskpart /s %ParentDir%scripts\partclean.txt
 
 @cls
 @choice /c:yn /m "You have completed the process on %disk%. Would you like to work on another drive?"
